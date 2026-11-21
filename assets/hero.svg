@@ -1,80 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
-  <title id="title">Erfan Kamali — Senior Software Engineer</title>
-  <desc id="desc">Minimal dark banner with softly animated lights, professional introduction, and a developer terminal motif.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1100" height="354" viewBox="0 0 1100 354" role="img" aria-label="Erfan Kamali — Senior Software Engineer building reliable backend systems, distributed infrastructure and developer platforms">
   <defs>
-    <linearGradient id="background" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#0A1020"/>
-      <stop offset="0.55" stop-color="#0C1425"/>
-      <stop offset="1" stop-color="#10152D"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" x2="1" y1="0">
-      <stop offset="0" stop-color="#5DE4D4"/>
-      <stop offset="0.5" stop-color="#70B6F5"/>
-      <stop offset="1" stop-color="#B3A1FF"/>
-    </linearGradient>
-    <linearGradient id="underLine" x1="0" x2="1" y1="0">
-      <stop offset="0" stop-color="#5DE4D4" stop-opacity="0"/>
-      <stop offset="0.2" stop-color="#5DE4D4" stop-opacity="0.8"/>
-      <stop offset="0.72" stop-color="#AD9DFA" stop-opacity="0.6"/>
-      <stop offset="1" stop-color="#AD9DFA" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="halo">
-      <stop offset="0" stop-color="#5F9DFA" stop-opacity=".32"/>
-      <stop offset=".55" stop-color="#7159D0" stop-opacity=".13"/>
-      <stop offset="1" stop-color="#7159D0" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
-      <path d="M36 0H0V36" fill="none" stroke="#C5D4F0" stroke-opacity=".05" stroke-width=".7"/>
-    </pattern>
-    <clipPath id="rounded"><rect width="1200" height="360" rx="20"/></clipPath>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0A1020"/><stop offset="0.55" stop-color="#0F1B30"/><stop offset="1" stop-color="#142642"/></linearGradient>
+    <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#52E5D0"/><stop offset="1" stop-color="#A8A0FC"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#55D9FF" stop-opacity="0.17"/><stop offset="1" stop-color="#55D9FF" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="35" height="35" patternUnits="userSpaceOnUse"><path d="M35 0H0V35" fill="none" stroke="#7F9FD0" stroke-opacity=".065" stroke-width="1"/></pattern>
+    <filter id="soft"><feGaussianBlur stdDeviation="20"/></filter>
+    <clipPath id="round"><rect width="1098" height="352" x="1" y="1" rx="21"/></clipPath>
   </defs>
-  <style>
-    .float { animation: float 8s ease-in-out infinite alternate; transform-origin: 950px 160px; }
-    .breath { animation: breathe 7s ease-in-out infinite alternate; }
-    .blink { animation: blink 1.2s steps(1,end) infinite; }
-    .pulse { animation: pulse 2.6s ease-in-out infinite; }
-    .trace { animation: trace 6.2s ease-in-out infinite alternate; }
-    @keyframes float { from { transform: translate(0px, 4px) scale(.97); } to { transform: translate(-10px,-8px) scale(1.04); } }
-    @keyframes breathe { 0%,100% {opacity:.7;} 50% {opacity:1;} }
-    @keyframes blink { 0%,49% {opacity:1;} 50%,100% {opacity:0;} }
-    @keyframes pulse { 0% {opacity:.6;} 50% {opacity:1;} 100% {opacity:.6;} }
-    @keyframes trace { from {transform:translateX(-65px);opacity:.3;} to {transform:translateX(60px);opacity:.85;} }
-    @media (prefers-reduced-motion: reduce) {
-      .float,.breath,.blink,.pulse,.trace { animation:none; }
-    }
-  </style>
-  <g clip-path="url(#rounded)">
-    <rect width="1200" height="360" fill="url(#background)"/>
-    <rect width="1200" height="360" fill="url(#grid)"/>
-    <g class="float">
-      <circle cx="980" cy="170" r="280" fill="url(#halo)"/>
-      <circle cx="987" cy="178" r="166" fill="none" stroke="#8E9DF5" stroke-opacity=".1"/>
-      <circle cx="987" cy="178" r="211" fill="none" stroke="#5DE4D4" stroke-opacity=".07"/>
-      <circle cx="987" cy="178" r="253" fill="none" stroke="#8E9DF5" stroke-opacity=".055"/>
+  <g clip-path="url(#round)">
+    <rect width="1100" height="354" fill="url(#bg)"/>
+    <rect width="1100" height="354" fill="url(#grid)"/>
+    <ellipse cx="910" cy="155" rx="280" ry="220" fill="url(#glow)"/>
+    <circle cx="790" cy="90" r="80" fill="#4BDFDF" opacity=".08" filter="url(#soft)"/>
+    <circle cx="995" cy="262" r="95" fill="#8E7CF5" opacity=".09" filter="url(#soft)"/>
+    <path d="M0 317 H1100" stroke="#8CA7C3" stroke-opacity=".13"/>
+    <rect x="53" y="45" width="8" height="8" rx="2" fill="#52E5D0"/>
+    <text x="73" y="54" fill="#A1BAD0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="3">HELLO, WORLD.</text>
+    <text x="53" y="150" fill="#F7FAFF" font-family="Arial,Helvetica,sans-serif" font-size="70" font-weight="750" letter-spacing="-2.8">Erfan Kamali</text>
+    <rect x="55" y="166" width="83" height="4" rx="2" fill="url(#stroke)"/>
+    <text x="53" y="207" fill="#D9E8F4" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="600">Senior Software Engineer</text>
+    <text x="54" y="243" fill="#9CB5CC" font-family="Arial,Helvetica,sans-serif" font-size="17">Making complex systems reliable, scalable, and simple.</text>
+    <text x="54" y="293" fill="#62DEDB" font-family="Consolas,Monaco,monospace" font-size="13" letter-spacing="1.3">BACKEND  /  DISTRIBUTED SYSTEMS  /  OBSERVABILITY</text>
+    <text x="54" y="340" fill="#7C96AE" font-family="Consolas,Monaco,monospace" font-size="11" letter-spacing="1.5">ENGINEER  ·  BUILDER  ·  PRODUCT CREATOR</text>
+    <!-- Right: animated distributed tracing graphic -->
+    <g transform="translate(708 56)">
+      <rect width="347" height="252" rx="19" fill="#0C1728" fill-opacity=".86" stroke="#436180" stroke-opacity=".75"/>
+      <circle cx="23" cy="22" r="4" fill="#F87D88"/><circle cx="38" cy="22" r="4" fill="#F8D181"/><circle cx="53" cy="22" r="4" fill="#58DFB0"/>
+      <text x="326" y="26" fill="#7794B2" text-anchor="end" font-family="Consolas,Monaco,monospace" font-size="11" letter-spacing=".7">request.trace</text>
+      <path d="M18 40H329" stroke="#436180" stroke-opacity=".55"/>
+      <path d="M96 105 H142 M217 105 H254 M180 139 V174" fill="none" stroke="#54718D" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round"/>
+      <rect x="22" y="80" width="84" height="55" rx="11" fill="#13314A" stroke="#4A9BBB"/>
+      <text x="64" y="103" text-anchor="middle" font-size="13" font-family="Consolas,monospace" fill="#7CE7E0">API</text>
+      <text x="64" y="119" text-anchor="middle" font-size="9" font-family="Consolas,monospace" fill="#8CA6C2">FastAPI</text>
+      <rect x="138" y="80" width="86" height="55" rx="11" fill="#20294A" stroke="#7189BC"/>
+      <text x="181" y="103" text-anchor="middle" font-size="13" font-family="Consolas,monospace" fill="#D7DEFF">QUEUE</text>
+      <text x="181" y="119" text-anchor="middle" font-size="9" font-family="Consolas,monospace" fill="#9BAACB">RabbitMQ</text>
+      <rect x="257" y="80" width="68" height="55" rx="11" fill="#1B3048" stroke="#4E7EAB"/>
+      <text x="291" y="103" text-anchor="middle" font-size="13" font-family="Consolas,monospace" fill="#C7E3FF">DB</text>
+      <text x="291" y="119" text-anchor="middle" font-size="9" font-family="Consolas,monospace" fill="#95AFC8">Redis</text>
+      <g>
+        <circle cx="109" cy="105" r="4" fill="#5AEBDD"><animate attributeName="cx" values="109;136;109" dur="3.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="3.3s" repeatCount="indefinite"/></circle>
+        <circle cx="226" cy="105" r="4" fill="#B3A6FF"><animate attributeName="cx" values="226;253;226" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle>
+        <circle cx="181" cy="142" r="4" fill="#65DAD6"><animate attributeName="cy" values="142;175;142" dur="4.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="4.7s" repeatCount="indefinite"/></circle>
+      </g>
+      <rect x="102" y="174" width="157" height="42" rx="11" fill="#103039" stroke="#3F958E"/>
+      <circle cx="123" cy="195" r="5" fill="#5CEBCC"><animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/></circle>
+      <text x="138" y="199" fill="#A0F6E5" font-family="Consolas,Monaco,monospace" font-size="12">TRACE CONNECTED</text>
+      <path d="M25 232 H322" stroke="#40536D" stroke-opacity=".55"/>
     </g>
-    <path d="M36 36h25M36 36v25M1164 36h-25M1164 36v25M36 324h25M36 324v-25M1164 324h-25M1164 324v-25" stroke="#7C94B5" stroke-opacity=".23" stroke-width="1.2" fill="none"/>
-    <circle cx="79" cy="69" r="4" fill="#62E9D5" class="pulse"/>
-    <text x="94" y="73" fill="#A7B8D0" font-family="'Segoe UI',Arial,sans-serif" font-size="12" letter-spacing="2.8" font-weight="700">HELLO, I'M</text>
-    <text x="75" y="169" fill="#F3F7FF" font-family="'Segoe UI',Arial,sans-serif" font-size="72" font-weight="750" letter-spacing="-2.5">Erfan Kamali</text>
-    <rect x="78" y="193" width="52" height="3" rx="1.5" fill="url(#accent)"/>
-    <text x="78" y="239" fill="#E1E8F5" font-family="'Segoe UI',Arial,sans-serif" font-size="26" font-weight="500">Senior Software Engineer</text>
-    <text x="79" y="278" fill="#91A3BE" font-family="'Segoe UI',Arial,sans-serif" font-size="17" letter-spacing=".15">Backend architecture  ·  Distributed systems  ·  Observability</text>
-    <g class="breath">
-      <rect x="804" y="73" width="330" height="214" rx="16" fill="#0E192B" stroke="#6880A0" stroke-opacity=".35" stroke-width="1.4"/>
-      <path d="M805 113H1133" stroke="#6880A0" stroke-opacity=".26"/>
-      <circle cx="829" cy="94" r="4.2" fill="#F28B92" opacity=".85"/>
-      <circle cx="845" cy="94" r="4.2" fill="#EFB969" opacity=".85"/>
-      <circle cx="861" cy="94" r="4.2" fill="#70D6B1" opacity=".85"/>
-      <text x="1110" y="99" fill="#8194AD" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="11" text-anchor="end">profile.ts</text>
-      <text x="827" y="150" fill="#5FE0D2" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="15">const</text>
-      <text x="885" y="150" fill="#DDE8F7" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="15">focus = [</text>
-      <text x="846" y="184" fill="#C8DBF4" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="14">"reliable systems",</text>
-      <text x="846" y="213" fill="#C8DBF4" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="14">"thoughtful architecture",</text>
-      <text x="846" y="242" fill="#C8DBF4" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="14">"shipping at scale"</text>
-      <text x="828" y="269" fill="#5FE0D2" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="14">]</text>
-      <rect x="850" y="258" width="8" height="14" rx="1" fill="#6CE8DB" class="blink"/>
-    </g>
-    <line x1="80" y1="320" x2="1120" y2="320" stroke="url(#underLine)" stroke-width="1.3"/>
-    <g class="trace"><line x1="150" y1="320" x2="250" y2="320" stroke="#83F2E5" stroke-opacity=".5" stroke-width="2.2"/></g>
   </g>
+  <rect x="1" y="1" width="1098" height="352" rx="21" fill="none" stroke="#365275" stroke-opacity=".75"/>
 </svg>

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#090f1d" />
+  <meta name="description" content="Packet Runner: a tiny 30-second networking arcade game by Erfan Kamali. Catch good packets and dodge errors." />
+  <title>Packet Runner · Erfan Kamali</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --base:#090f1d; --panel:#101a2c; --panel2:#12213a; --line:#29445c;
+      --muted:#91abc2; --text:#eaf3fc; --mint:#5ce8cf; --blue:#8cbdfb;
+      --purple:#b9a4ff; --danger:#ff789a; --amber:#ffdc91;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{min-height:100%;background:var(--base)}
+    body{margin:0;min-height:100vh;color:var(--text);background:radial-gradient(ellipse at 78% -12%, #1b3654 0, transparent 39%),radial-gradient(ellipse at 5% 90%, #16213c 0, transparent 38%),var(--base);overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;cursor:pointer}
+    button:focus-visible,a:focus-visible{outline:3px solid var(--mint);outline-offset:5px}
+    .outer{width:min(100% - 40px,1040px);margin:auto}
+    .topbar{height:90px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .identity{display:flex;align-items:center;gap:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;font-weight:700;letter-spacing:.1em;color:#b6cfe2}
+    .mark{width:34px;height:34px;border:1px solid #4db6ba;border-radius:10px;display:grid;place-items:center;color:var(--mint);background:#12313b;box-shadow:0 0 34px #5ce8cf13}
+    .back{padding:10px 14px;border:1px solid #37526b;border-radius:10px;color:#a9c4d7;font-size:13px;transition:background .22s,border-color .22s,transform .22s}
+    .back:hover{background:#1b3148;border-color:#5ce8cf80;transform:translateY(-2px)}
+    .hero{padding:35px 0 27px;display:flex;align-items:end;justify-content:space-between;gap:24px}
+    .eyebrow{font-family:ui-monospace,Menlo,monospace;letter-spacing:.23em;color:var(--mint);font-size:12px;font-weight:700;margin:0 0 13px}
+    h1{font-size:clamp(44px,7vw,76px);line-height:1.05;letter-spacing:-.065em;font-weight:780;margin:0}
+    h1 span{color:var(--mint)}
+    .sub{font-size:clamp(14px,2vw,18px);color:#b5cada;margin:17px 0 0}
+    .status{display:flex;align-items:center;gap:9px;color:#8fa9bf;white-space:nowrap;font:12px ui-monospace,Menlo,monospace;padding-bottom:7px}
+    .status i{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 16px var(--mint);animation:beacon 2.4s infinite}
+    @keyframes beacon{50%{opacity:.32;box-shadow:0 0 4px var(--mint)}}
+    .console{background:linear-gradient(145deg,#101d2f,#0e1829 65%,#152741);border:1px solid #36516e;border-radius:22px;padding:20px;box-shadow:0 24px 70px #0005, inset 0 1px 0 #ffffff0b;position:relative;overflow:hidden}
+    .console::before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 50px #63d9de08}
+    .hud{display:grid;grid-template-columns:1fr 1fr 1fr 1.2fr;gap:10px;margin-bottom:15px}
+    .metric{background:#0b1525;border:1px solid #29445f;border-radius:12px;padding:13px 17px;min-height:77px}
+    .metric .label{display:block;color:#809eb5;font:11px ui-monospace,Menlo,monospace;letter-spacing:.12em;margin-bottom:8px}
+    .metric strong{font-size:26px;font-weight:730;font-variant-numeric:tabular-nums;line-height:1}
+    .metric:nth-child(1) strong{color:var(--mint)}
+    .metric:nth-child(2) strong{color:var(--blue)}
+    .metric:nth-child(3) strong{color:var(--amber)}
+    .metric:nth-child(4) strong{color:var(--purple);letter-spacing:.12em}
+    #arena{height:clamp(310px,42vw,405px);position:relative;overflow:hidden;border:1px solid #3a5877;border-radius:15px;touch-action:none;background:radial-gradient(ellipse at 50% 109%,#24576875,transparent 47%),radial-gradient(ellipse at 78% 0,#27385a60,transparent 50%),#091526;isolation:isolate}
+    #arena::before{content:"";position:absolute;inset:0;opacity:.48;background-image:linear-gradient(to right,#3a5a743c 1px,transparent 1px),linear-gradient(to bottom,#3a5a743c 1px,transparent 1px);background-size:38px 38px;animation:scrollgrid 22s linear infinite;pointer-events:none}
+    #arena::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,#1a546210);pointer-events:none}
+    @keyframes scrollgrid{to{background-position:0 38px}}
+    .lane{position:absolute;bottom:57px;left:4%;right:4%;height:1px;background:linear-gradient(90deg,transparent,#62d2d147,transparent);pointer-events:none}
+    .lane::after{content:"";position:absolute;top:-3px;left:0;right:0;border-top:1px dashed #5acacf33}
+    #paddle{width:106px;height:38px;position:absolute;left:50%;bottom:29px;z-index:4;transform:translateX(-50%);background:linear-gradient(135deg,#55e5d4,#84bce7);border:2px solid #a5fff3;border-radius:12px;box-shadow:0 0 21px #55e5d84a,inset 0 3px 8px #ffffff60;display:flex;align-items:center;justify-content:center;color:#092331;font:700 12px ui-monospace,Menlo,monospace;letter-spacing:.12em;pointer-events:none}
+    #paddle::before,#paddle::after{content:"";position:absolute;width:9px;height:2px;border-radius:2px;background:#ecffff;top:18px}
+    #paddle::before{left:9px}#paddle::after{right:9px}
+    .packet{width:28px;height:28px;position:absolute;z-index:3;top:0;left:0;display:grid;place-items:center;will-change:transform;border:1px solid;border-radius:9px;font:700 16px ui-monospace,monospace;user-select:none;pointer-events:none}
+    .packet.good{color:#a7fff0;background:#1a695b;border-color:#5ce8cf;box-shadow:0 0 20px #5ce8cf40}
+    .packet.bad{color:#ffd5e0;background:#65273f;border-color:#ff789a;box-shadow:0 0 20px #ff789a30}
+    .packet::before{content:"";position:absolute;top:-18px;left:12px;width:2px;height:15px;border-radius:2px;background:linear-gradient(transparent,currentColor);opacity:.55}
+    .spark{position:absolute;z-index:6;font:800 16px ui-monospace,monospace;pointer-events:none;text-shadow:0 0 15px currentColor;animation:spark .7s ease-out forwards}
+    .spark.good{color:#80f8df}.spark.bad{color:#ff8eab}
+    @keyframes spark{to{transform:translateY(-36px) scale(1.35);opacity:0}}
+    .overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:10;text-align:center;padding:25px;background:#071222c9;backdrop-filter:blur(5px);transition:opacity .3s ease,visibility .3s ease}
+    .overlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .overlay-card{max-width:490px}
+    .overlay-icon{width:60px;height:60px;border:1px solid #6ce2d67a;border-radius:20px;background:#12373b;margin:0 auto 16px;display:grid;place-items:center;color:var(--mint);font:700 27px ui-monospace,monospace;box-shadow:0 0 42px #5ce8cf20}
+    h2{font-size:clamp(27px,4vw,37px);letter-spacing:-.04em;margin:0 0 11px}
+    .overlay p{margin:0 auto 21px;color:#a9bfce;font-size:15px;line-height:1.65;max-width:440px}
+    .key{display:inline-block;border:1px solid #426079;background:#203149;color:#d6e6f2;border-radius:5px;padding:2px 7px;font:12px ui-monospace,monospace}
+    .primary{background:var(--mint);color:#09242b;border:1px solid #a8ffec;border-radius:11px;padding:13px 26px;font-weight:800;box-shadow:0 9px 27px #5ce8cf23;transition:transform .2s,background .2s,box-shadow .2s}
+    .primary:hover{transform:translateY(-3px);background:#93ffeb;box-shadow:0 15px 35px #5ce8cf35}
+    .underbar{padding:17px 2px 0;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .legend{display:flex;flex-wrap:wrap;gap:20px;color:#9db8ca;font-size:13px}
+    .dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:7px;background:var(--mint);box-shadow:0 0 10px #5ce8cf30}
+    .dot.bad{background:var(--danger);box-shadow:0 0 10px #ff789a30}
+    .small-button{border:1px solid #40617b;border-radius:9px;background:#172a42;color:#c3d8e7;padding:9px 16px;font-size:13px;font-weight:650;transition:background .2s,transform .2s}
+    .small-button:hover:not(:disabled){background:#274360;transform:translateY(-2px)}
+    .small-button:disabled{opacity:.35;cursor:default}
+    .help{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:21px 2px 24px;color:#7e9db4;font:12px ui-monospace,Menlo,monospace}
+    footer{padding:11px 0 35px;color:#7790a3;font-size:13px;text-align:center}
+    footer a{color:#8ddad6;border-bottom:1px solid #8ddad659}
+    .tip{color:var(--mint)}
+    .hit-flash{animation:badflash .28s ease-out}
+    @keyframes badflash{from{box-shadow:inset 0 0 120px #ff617b40}to{box-shadow:inset 0 0 0 #ff617b00}}
+    @media(max-width:700px){
+      .outer{width:min(100% - 24px,1040px)}.topbar{height:70px}.identity{font-size:11px;letter-spacing:.02em}.hero{padding-top:23px;display:block}.status{margin-top:18px}.console{padding:11px;border-radius:17px}.hud{gap:6px}.metric{padding:11px 9px;min-height:69px}.metric .label{font-size:9px}.metric strong{font-size:20px}#paddle{width:92px}.legend{gap:11px;font-size:12px}.underbar{align-items:start}.help{line-height:1.6}
+    }
+    @media(max-width:390px){.metric strong{font-size:17px}.metric .label{font-size:8px}.back{padding:8px}.identity{gap:7px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <header class="topbar">
+      <a class="identity" href="https://github.com/3rfun77" aria-label="Erfan Kamali GitHub profile"><span class="mark">&gt;_</span> ERFAN / LAB</a>
+      <a class="back" href="https://github.com/3rfun77">↗ Back to GitHub</a>
+    </header>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">A TINY INTERACTIVE EXPERIMENT / 001</p>
+        <h1>Packet <span>Runner.</span></h1>
+        <p class="sub">A 30-second arcade break for people who ship things.</p>
+      </div>
+      <div class="status"><i aria-hidden="true"></i> SYSTEMS NOMINAL <span aria-hidden="true">//</span> LOCAL ARCADE</div>
+    </section>
+    <main class="console" aria-label="Packet Runner game">
+      <div class="hud" aria-live="off">
+        <div class="metric"><span class="label">SCORE</span><strong id="score">000</strong></div>
+        <div class="metric"><span class="label">PERSONAL BEST</span><strong id="best">000</strong></div>
+        <div class="metric"><span class="label">TIME</span><strong id="time">30s</strong></div>
+        <div class="metric"><span class="label">INTEGRITY</span><strong id="lives" aria-label="3 lives">♥ ♥ ♥</strong></div>
+      </div>
+      <div id="arena" tabindex="0" aria-label="Move the router with your mouse, touch, or arrow keys to catch green packets and avoid pink errors" role="application">
+        <div class="lane" aria-hidden="true"></div>
+        <div id="paddle" aria-hidden="true">ROUTER</div>
+        <div class="overlay" id="overlay">
+          <div class="overlay-card">
+            <div class="overlay-icon" aria-hidden="true">↗</div>
+            <h2 id="overlay-title">Ready to route packets?</h2>
+            <p id="overlay-text">Catch the <span class="tip">mint packets</span> for points. Dodge the pink errors to protect system integrity. Move using your mouse, finger, or <span class="key">←</span> <span class="key">→</span>.</p>
+            <button class="primary" id="start" type="button">▶ Start routing</button>
+          </div>
+        </div>
+      </div>
+      <div class="underbar">
+        <div class="legend"><span><i class="dot" aria-hidden="true"></i> +10 healthy packet</span><span><i class="dot bad" aria-hidden="true"></i> -15 error / lose integrity</span></div>
+        <button class="small-button" id="pause" type="button" disabled>Pause · P</button>
+      </div>
+      <div class="help"><span>MOVE: MOUSE / TOUCH / ← → / A D</span><span>COMBO BONUS: EVERY 5 CLEAN CATCHES</span></div>
+    </main>
+    <footer>Made with CSS animations, JavaScript, and an unreasonable love for healthy systems. <a href="https://github.com/3rfun77">Erfan Kamali ↗</a></footer>
+  </div>
+  <script>
+    (() => {
+      'use strict';
+      const $ = (id) => document.getElementById(id);
+      const arena = $('arena');
+      const paddle = $('paddle');
+      const overlay = $('overlay');
+      const startBtn = $('start');
+      const pauseBtn = $('pause');
+      const scoreEl = $('score');
+      const bestEl = $('best');
+      const timeEl = $('time');
+      const livesEl = $('lives');
+      const key = 'erfan_packet_runner_best_v1';
+      let best = 0;
+      try { best = Math.max(0, Number(localStorage.getItem(key)) || 0); } catch (_) {}
+      const game = {
+        active: false, paused: false, items: [], score: 0, lives: 3, remaining: 30,
+        combo: 0, elapsed: 0, nextSpawn: .55, playerX: 0, targetX: 0,
+        left: false, right: false, last: 0, frame: 0, width: 0, height: 0
+      };
+      const pretty = (n) => String(Math.round(n)).padStart(3,'0');
+      bestEl.textContent = pretty(best);
+      const size = () => {
+        game.width = arena.clientWidth;
+        game.height = arena.clientHeight;
+        game.targetX = Math.max(54, Math.min(game.width-54, game.targetX || game.width / 2));
+        game.playerX = game.playerX || game.width / 2;
+        paddle.style.left = game.playerX + 'px';
+      };
+      size();
+      window.addEventListener('resize', size);
+      function updateHud() {
+        scoreEl.textContent = pretty(game.score);
+        timeEl.textContent = Math.ceil(game.remaining) + 's';
+        livesEl.textContent = Array.from({length:3},(_,i)=> i < game.lives ? '♥' : '♡').join(' ');
+        livesEl.setAttribute('aria-label',game.lives + ' lives remaining');
+        bestEl.textContent = pretty(Math.max(best,game.score));
+      }
+      function clearItems() { for (const item of game.items) item.el.remove(); game.items = []; arena.querySelectorAll('.spark').forEach(el => el.remove()); }
+      function showScreen(title,copy,cta) {
+        $('overlay-title').textContent = title;
+        $('overlay-text').textContent = copy;
+        startBtn.textContent = cta;
+        overlay.classList.remove('hidden');
+      }
+      function start() {
+        cancelAnimationFrame(game.frame);
+        clearItems(); size();
+        Object.assign(game,{active:true,paused:false,score:0,lives:3,remaining:30,combo:0,elapsed:0,nextSpawn:.45,last:performance.now()});
+        game.playerX = game.width/2; game.targetX = game.playerX;
+        paddle.style.left = game.playerX+'px';
+        overlay.classList.add('hidden');
+        pauseBtn.disabled = false; pauseBtn.textContent = 'Pause · P';
+        updateHud(); arena.focus({preventScroll:true});
+        game.frame = requestAnimationFrame(tick);
+      }
+      function finish(depleted) {
+        game.active = false; game.paused = false;
+        cancelAnimationFrame(game.frame);
+        pauseBtn.disabled = true; clearItems();
+        const newBest = game.score > best;
+        if (newBest) { best = game.score; try { localStorage.setItem(key,String(best)); } catch (_) {} }
+        updateHud();
+        showScreen(depleted ? 'Connection lost.' : 'Run complete.',
+          `Final score: ${game.score} points. ${newBest ? 'New personal best! ' : ''}${depleted ? 'Too many error packets slipped through.' : 'Nice routing. Take another run and beat your best.'}`,
+          '↻ Play again');
+      }
+      function spawn() {
+        const good = Math.random() < .76;
+        const itemEl = document.createElement('div');
+        itemEl.className = 'packet '+(good?'good':'bad');
+        itemEl.textContent = good?'◆':'×';
+        itemEl.setAttribute('aria-hidden','true');
+        const x = 20 + Math.random() * Math.max(1,game.width-65);
+        const item = {el:itemEl,x,y:-36,velocity:120+Math.random()*90+(30-game.remaining)*.6,good};
+        itemEl.style.transform = `translate3d(${x}px,${item.y}px,0)`;
+        arena.appendChild(itemEl); game.items.push(item);
+      }
+      function spark(x,y,label,good) {
+        const e = document.createElement('div');
+        e.className = 'spark '+(good?'good':'bad');
+        e.textContent = label;
+        e.style.left = Math.max(0,x-10)+'px'; e.style.top = Math.max(0,y-20)+'px';
+        arena.appendChild(e);
+        e.addEventListener('animationend',()=>e.remove(),{once:true});
+        setTimeout(()=>e.remove(),800);
+      }
+      function catchPacket(item) {
+        if (item.good) {
+          game.combo++;
+          const bonus = game.combo % 5 === 0 ? 25 : 0;
+          game.score += 10+bonus;
+          spark(item.x,item.y,bonus?'+35 COMBO':'+10',true);
+        } else {
+          game.combo = 0;
+          game.score = Math.max(0,game.score-15);
+          game.lives--;
+          spark(item.x,item.y,'-15',false);
+          arena.classList.remove('hit-flash'); void arena.offsetWidth; arena.classList.add('hit-flash');
+        }
+        updateHud();
+      }
+      function tick(now) {
+        if (!game.active || game.paused) return;
+        const dt = Math.min((now-game.last)/1000,.04);
+        game.last = now;
+        game.elapsed += dt;
+        game.remaining = Math.max(0,30-game.elapsed);
+        game.nextSpawn -= dt;
+        if (game.nextSpawn <= 0) {
+          spawn();
+          game.nextSpawn = .46 + Math.random()*.29 - Math.min(.11,game.elapsed*.004);
+        }
+        if (game.left) game.targetX -= 400*dt;
+        if (game.right) game.targetX += 400*dt;
+        const half = paddle.offsetWidth/2;
+        game.targetX = Math.max(half+5,Math.min(game.width-half-5,game.targetX));
+        game.playerX += (game.targetX-game.playerX)*Math.min(1,dt*15);
+        paddle.style.left = game.playerX+'px';
+        const catchY = game.height-62;
+        for (let i=game.items.length-1;i>=0;i--) {
+          const item = game.items[i];
+          const prevY = item.y;
+          item.y += item.velocity*dt;
+          item.el.style.transform = `translate3d(${item.x}px,${item.y}px,0)`;
+          const centerX = item.x+14;
+          if (prevY+28<catchY && item.y+28>=catchY && Math.abs(centerX-game.playerX)<half+9) {
+            catchPacket(item); item.el.remove(); game.items.splice(i,1);
+          } else if (item.y>game.height+20) {
+            if (item.good) game.combo=0;
+            item.el.remove(); game.items.splice(i,1);
+          }
+        }
+        updateHud();
+        if (game.lives<=0) {finish(true);return;}
+        if (game.remaining<=0) {finish(false);return;}
+        game.frame=requestAnimationFrame(tick);
+      }
+      function pauseToggle() {
+        if (!game.active) return;
+        game.paused = !game.paused;
+        if (game.paused) {
+          cancelAnimationFrame(game.frame);
+          showScreen('Routing paused.','Take a breather. Your packets will be right here.','▶ Resume game');
+          pauseBtn.textContent='Resume · P';
+        } else {
+          overlay.classList.add('hidden');
+          pauseBtn.textContent='Pause · P';
+          game.last=performance.now();
+          arena.focus({preventScroll:true});
+          game.frame=requestAnimationFrame(tick);
+        }
+      }
+      startBtn.addEventListener('click',()=>game.active && game.paused ? pauseToggle() : start());
+      pauseBtn.addEventListener('click',pauseToggle);
+      const steer = (event) => {
+        if (!game.active || game.paused) return;
+        const rect=arena.getBoundingClientRect();
+        game.targetX=event.clientX-rect.left;
+      };
+      arena.addEventListener('pointermove',steer);
+      arena.addEventListener('pointerdown',steer);
+      document.addEventListener('keydown',event=>{
+        if (!game.active) return;
+        const k=event.key.toLowerCase();
+        if(['arrowleft','arrowright','a','d','p'].includes(k)) event.preventDefault();
+        if(k==='p'&&!event.repeat){pauseToggle();return;}
+        if(k==='arrowleft'||k==='a') game.left=true;
+        if(k==='arrowright'||k==='d') game.right=true;
+      });
+      document.addEventListener('keyup',event=>{
+        const k=event.key.toLowerCase();
+        if(k==='arrowleft'||k==='a') game.left=false;
+        if(k==='arrowright'||k==='d') game.right=false;
+      });
+      window.addEventListener('blur',()=>{if(game.active&&!game.paused)pauseToggle();});
+      updateHud();
+    })();
+  </script>
+</body>
+</html>
