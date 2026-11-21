@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="262" viewBox="0 0 520 262" role="img" aria-label="Erfan Kamali, Senior Software Engineer">
+ <rect x="1" y="1" width="518" height="260" rx="19" fill="#151b23" stroke="#3d444d" stroke-width="1.5"/>
+ <text x="32" y="48" font-family="Arial,Helvetica,sans-serif" font-size="14" letter-spacing="2.7" font-weight="700" fill="#ab9df2">HELLO, I'M</text>
+ <text x="31" y="109" font-family="Arial,Helvetica,sans-serif" font-size="47" font-weight="730" fill="#f0f6fc">Erfan Kamali</text>
+ <text x="32" y="151" font-family="Arial,Helvetica,sans-serif" font-size="24" fill="#9198a1">Senior Software Engineer</text>
+ <path d="M32 184H488" stroke="#3d444d"/>
+ <text x="32" y="224" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#f0f6fc">Backend  ·  APIs  ·  Reliable systems</text>
+ <circle cx="468" cy="39" r="9" fill="#ab9df2" opacity=".44"><animate attributeName="opacity" values=".2;.6;.2" dur="4s" repeatCount="indefinite"/></circle>
+ </svg>

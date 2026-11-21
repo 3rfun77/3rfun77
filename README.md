@@ -1,41 +1,60 @@
-<!-- Minimal developer profile. Animated SVGs use no third-party scripts. -->
+<!-- GitHub-native, light/dark responsive. No custom CSS is required. -->
 <p align="center">
-  <img src="./assets/hero.svg" width="100%" alt="Erfan Kamali — Senior Software Engineer. Backend engineering, API design, and modern development tools." />
+  <picture>
+    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/hero-dark-mobile.svg">
+    <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/hero-light-mobile.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
+    <img src="./assets/hero-light.svg" alt="Erfan Kamali — Senior Software Engineer focusing on backend engineering, APIs and reliable systems" width="100%">
+  </picture>
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/erfankamali/"><img alt="LinkedIn" src="https://img.shields.io/badge/Let's_connect-LinkedIn-2474A6?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white&amp;labelColor=13273E" /></a>&nbsp;
-  <a href="mailto:kamali77.erfan@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Say_hello-Email-9279DE?style=for-the-badge&amp;logo=gmail&amp;logoColor=white&amp;labelColor=13273E" /></a>
+  <a href="https://www.linkedin.com/in/erfankamali/">LinkedIn</a>
+  &nbsp;·&nbsp;
+  <a href="mailto:kamali77.erfan@gmail.com">Email me</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/3rfun77">GitHub</a>
 </p>
 
-<p align="center">
-  <img src="./assets/typing.svg" width="88%" alt="Designing clean APIs, solving backend challenges, and building thoughtful software." />
-</p>
+### A little about me
 
-### Hi, I'm Erfan 👋
-
-I'm a **Senior Software Engineer** who enjoys creating **reliable, maintainable software**. I focus on **backend engineering, API design, system architecture, performance, and automation** — and I like working across the stack when a good idea calls for it.
+I'm a **Senior Software Engineer** who enjoys building **well-designed APIs, dependable services, and thoughtful software**. I care about clarity, performance, and making systems easier to maintain.
 
 ### Engineering focus
 
-<p align="center">
-  <img src="./assets/focus.svg" width="100%" alt="My engineering focus: API engineering, data and performance, reliable systems, and full-stack thinking." />
-</p>
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/focus-dark-mobile.svg">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/focus-light-mobile.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/focus-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/focus-light.svg">
+  <img src="./assets/focus-light.svg" alt="Engineering focus: backend and API design, data and performance, reliability and delivery, and full-stack collaboration." width="100%">
+</picture>
 
 ### Core stack
 
-<p align="center">
-  <img src="./assets/stack.svg" width="100%" alt="My core stack grouped into Languages and Backend, Data and Messaging, and Tools Frontend and Observability." />
-</p>
+**Languages & Backend**  
+<kbd>Python</kbd> <kbd>TypeScript</kbd> <kbd>Django</kbd> <kbd>FastAPI</kbd>
 
-### A tiny coding break 🎮
+**Data & Messaging**  
+<kbd>PostgreSQL</kbd> <kbd>Redis</kbd> <kbd>RabbitMQ</kbd> <kbd>Celery</kbd>
 
-<p align="center">
-  <a href="https://3rfun77.github.io/3rfun77/game/">
-    <img src="./assets/game-card.svg" width="100%" alt="Play Packet Runner: catch packets, dodge errors, and beat the clock. Opens a mini-game hosted on GitHub Pages." />
-  </a>
-</p>
+**Tools & Observability**  
+<kbd>Docker</kbd> <kbd>OpenTelemetry</kbd> <kbd>Pytest</kbd>
 
-<p align="center"><sub>A small browser game built with HTML, CSS animations &amp; JavaScript.</sub></p>
+**Frontend**  
+<kbd>React</kbd>
 
-<p align="center"><strong>Build simply. Think deeply. Keep learning.</strong></p>
+### A little break 🎮
+
+<a href="https://3rfun77.github.io/3rfun77/game/">
+  <picture>
+    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/game-dark-mobile.svg">
+    <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/game-light-mobile.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/game-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/game-light.svg">
+    <img src="./assets/game-light.svg" alt="Play Packet Runner — a 30-second browser mini-game" width="100%">
+  </picture>
+</a>
+
+<p align="center"><sub>Built with HTML, CSS and JavaScript · <a href="https://3rfun77.github.io/3rfun77/game/">Open the game</a></sub></p>

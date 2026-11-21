@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="197" viewBox="0 0 520 197" role="img" aria-label="Packet Runner browser mini-game — play now">
+ <rect x="1" y="1" width="518" height="195" rx="19" fill="#151b23" stroke="#3d444d" stroke-width="1.5"/>
+ <rect x="26" y="26" width="61" height="61" rx="16" fill="#302a4a"/>
+ <g fill="none" stroke="#ab9df2" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="39" y="45" width="36" height="23" rx="9"/><path d="M48 51v11m-5-5.5h10" stroke-width="2.4"/><circle cx="67" cy="55" r="1"/><circle cx="62" cy="60" r="1"/></g>
+ <text x="106" y="56" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" fill="#f0f6fc">Packet Runner</text>
+ <text x="107" y="81" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#9198a1">30-second browser mini-game</text>
+ <rect x="26" y="113" width="466" height="60" rx="12" fill="#ab9df2"/>
+ <text x="185" y="150" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#0d1117">Play the game  →</text>
+ </svg>

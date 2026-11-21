@@ -1,37 +1,27 @@
-# GitHub profile V5 — publish guide
+# Publish your GitHub Profile — V7
 
-## 1. Upload the profile
+This version blends into GitHub's native theme instead of using dark-blue dashboard graphics.
 
-1. Create a **public** repository named exactly **`3rfun77`** under your GitHub account `3rfun77`, or use your existing repository of that name.
-2. Upload `README.md`, the whole `assets/` folder, and the whole `game/` folder to the **repository root**, keeping their paths.
-3. Commit to `main`. Your profile README will appear on `https://github.com/3rfun77`.
+## Upload the files
 
-## 2. Enable the playable mini-game
+1. Open your **public** repository `3rfun77/3rfun77`.
+2. Upload `README.md`, the complete `assets/` directory, and `game/` directory from this package to the **repository root**.
+3. Commit on `main` (or your site's publishing branch). The profile README is shown at `https://github.com/3rfun77`.
 
-1. Open **Repository Settings → Pages**.
-2. Under **Build and deployment**, select **Deploy from a branch**.
-3. Choose the **`main`** branch and **`/(root)`** folder; save.
-4. When GitHub Pages publishes, the **Packet Runner** game link becomes:
-   `https://3rfun77.github.io/3rfun77/game/`
+## Light/dark appearance
 
-The game can also be tested locally by opening `game/index.html` in a modern browser. It is **one standalone HTML file**, with CSS transitions and JavaScript built in and no external dependencies.
+The README uses GitHub's `<picture>` support to serve `hero-light.svg` / `hero-dark.svg` and `game-light.svg` / `game-dark.svg`, plus mobile-sized versions for narrow screens. The **Core stack uses native `<kbd>` elements**, so colors and text wrapping are handled by GitHub rather than a fixed-width image. If your browser/OS theme differs from GitHub's manually chosen theme, the source-selection behavior may vary. The default/fallback images are light.
 
-## 3. What animates where?
+## Enable the playable game
 
-- `assets/hero.svg`: soft telemetry indicators and flowing packets, inside the README.
-- `assets/typing.svg`: rotating intro lines, inside the README.
-- `assets/focus.svg`: animated engineering-focus rail featuring four general engineering strengths.
-- `assets/stack.svg`: organized technology badges in three compact rows.
-- `assets/game-card.svg`: animated packet mini-preview and a clickable link, inside the README.
-- `game/index.html`: real interactive game with animated particles, hover effects, score effects, and transitions; it runs on **GitHub Pages**, not inside the README.
+1. In the profile repository go to **Settings → Pages**.
+2. Select **Deploy from a branch** → `main` → `/(root)` → **Save**.
+3. After successful deployment, the game will appear at `https://3rfun77.github.io/3rfun77/game/`.
 
-GitHub filters custom CSS and JavaScript from rendered Markdown. Animated SVGs are the best fit for a self-contained README. SVG animation behavior can vary by client or reduced-motion settings; the images retain a readable first frame.
+The game is a standalone `game/index.html` page and includes CSS and JavaScript. It follows your system's light/dark preference. GitHub README pages themselves do not run standalone HTML, CSS or JS games.
 
-## Customization
+## Clean-up
 
-- Edit `README.md` to change copy, URLs or technology badges.
-- SVG assets are plain-text vector files and can be edited directly.
-- Game colors and sizes are in CSS variables at the top of `game/index.html`.
-- Optional: rename the GitHub Pages repository or move the game only if you also update the link in `README.md`.
+You can delete the older `assets/hero.svg`, `assets/typing.svg`, `assets/focus.svg`, `assets/stack.svg`, and `assets/game-card.svg` from previous versions; the new README no longer references them. The new files are `hero-light.svg`, `hero-dark.svg`, `hero-light-mobile.svg`, `hero-dark-mobile.svg`, `game-light.svg`, `game-dark.svg`, `game-light-mobile.svg`, and `game-dark-mobile.svg`.
 
-No contact phone/address is displayed. This version is intentionally skills-only. No employer names, internal system names, client projects, or work-specific metrics are included.
+The public README stays general: no employer names, internal project names, or company-specific accomplishments.

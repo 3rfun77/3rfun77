@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="168" viewBox="0 0 1080 168" role="img" aria-label="Packet Runner: a small browser game. Play a 30-second round.">
+ <rect x="1" y="1" width="1078" height="166" rx="18" fill="#F6F8FA" stroke="#D1D9E0" stroke-width="1.5"/>
+ <rect x="33" y="36" width="85" height="85" rx="20" fill="#EAE6FF"/>
+ <g fill="none" stroke="#6B58C4" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+  <rect x="51" y="67" width="49" height="28" rx="11"/>
+  <path d="M62 76v11M56.5 81.5h11" stroke-width="2.8"/>
+  <circle cx="85" cy="78" r="1.6" stroke-width="2.5"/>
+  <circle cx="91" cy="84" r="1.6" stroke-width="2.5"/>
+ </g>
+ <text x="147" y="67" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#1F2328">Packet Runner</text>
+ <text x="148" y="98" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#59636E">A 30-second mini-game. Catch the good, avoid the bad.</text>
+ <rect x="851" y="54" width="184" height="59" rx="29" fill="#6B58C4"/>
+ <text x="873" y="90" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">Play the game</text>
+ <path d="M1004 83h14m-6-6 6 6-6 6" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <circle cx="769" cy="81" r="6" fill="#6B58C4" opacity=".6"><animate attributeName="cx" values="766;779;766" dur="4s" repeatCount="indefinite"/></circle>
+ <circle cx="790" cy="52" r="4" fill="#0969DA" opacity=".5"><animate attributeName="cy" values="52;59;52" dur="3.8s" repeatCount="indefinite"/></circle>
+</svg>
