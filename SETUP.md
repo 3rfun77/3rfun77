@@ -1,4 +1,4 @@
-# GitHub profile V4 — publish guide
+# GitHub profile V5 — publish guide
 
 ## 1. Upload the profile
 
@@ -20,7 +20,8 @@ The game can also be tested locally by opening `game/index.html` in a modern bro
 
 - `assets/hero.svg`: soft telemetry indicators and flowing packets, inside the README.
 - `assets/typing.svg`: rotating intro lines, inside the README.
-- `assets/capabilities.svg`: three clean technology and ability cards.
+- `assets/focus.svg`: animated engineering-focus rail featuring four general engineering strengths.
+- `assets/stack.svg`: organized technology badges in three compact rows.
 - `assets/game-card.svg`: animated packet mini-preview and a clickable link, inside the README.
 - `game/index.html`: real interactive game with animated particles, hover effects, score effects, and transitions; it runs on **GitHub Pages**, not inside the README.
 

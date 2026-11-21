@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="292" viewBox="0 0 1100 292" role="img" aria-label="Engineering focus: API engineering, data and performance, reliable systems, and full-stack thinking.">
+<defs>
+  <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0C1626"/><stop offset="1" stop-color="#17253D"/></linearGradient>
+  <linearGradient id="rail" x1="0" x2="1"><stop stop-color="#51DBCB"/><stop offset=".54" stop-color="#77B9FF"/><stop offset="1" stop-color="#AB99FC"/></linearGradient>
+  <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0C1626" stop-opacity="0"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity=".13"/><stop offset="1" stop-color="#0C1626" stop-opacity="0"/></linearGradient>
+  <radialGradient id="spot"><stop stop-color="#4BE4CE" stop-opacity=".10"/><stop offset="1" stop-color="#4BE4CE" stop-opacity="0"/></radialGradient>
+  <clipPath id="round"><rect x="1" y="1" width="1098" height="290" rx="20"/></clipPath>
+</defs>
+<g clip-path="url(#round)">
+  <rect width="1100" height="292" fill="url(#background)"/>
+  <circle cx="115" cy="80" r="200" fill="url(#spot)"/>
+  <path d="M0 62H1100" stroke="#35506D" stroke-opacity=".30"/>
+  <text x="42" y="38" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" letter-spacing="2.4" fill="#96ABC3">A FEW THINGS I CARE ABOUT</text>
+  <circle cx="1026" cy="33" r="4" fill="#65E9D7"><animate attributeName="opacity" values="1;.35;1" dur="3s" repeatCount="indefinite"/></circle>
+  <text x="1008" y="37" text-anchor="end" font-family="Consolas,monospace" font-size="12" fill="#8BA6BD">always improving</text>
+  <path d="M89 117H1011" stroke="#2B4562" stroke-width="3" stroke-linecap="round"/>
+  <path d="M89 117H1011" stroke="url(#rail)" stroke-width="2" stroke-linecap="round" opacity=".56"/>
+  <circle cy="117" cx="89" r="5" fill="#77EEE0"><animate attributeName="cx" values="89;1011" dur="7.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" dur="7.6s" repeatCount="indefinite"/></circle>
+  <path d="M278 92V269 M543 92V269 M817 92V269" stroke="#324962" stroke-opacity=".42" stroke-dasharray="3 8"/>
+  <circle cx="107" cy="117" r="25" fill="#15263C" stroke="#5AE3D3" stroke-width="1.4"/>
+  <circle cx="107" cy="117" r="19" fill="#5AE3D3" fill-opacity=".10"/>
+  <text x="107" y="123" font-family="Consolas,monospace" text-anchor="middle" font-size="16" font-weight="bold" fill="#5AE3D3">01</text>
+  <rect x="43" y="155" width="32" height="3" rx="1.5" fill="#5AE3D3"/>
+  <text x="43" y="193" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#EAF4FD">API ENGINEERING</text>
+  <text x="43" y="223" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#AFC2D5">Clear contracts,</text>
+  <text x="43" y="247" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#AFC2D5">maintainable services</text>
+  <circle cx="372" cy="117" r="25" fill="#15263C" stroke="#7AC9F5" stroke-width="1.4"/>
+  <circle cx="372" cy="117" r="19" fill="#7AC9F5" fill-opacity=".10"/>
+  <text x="372" y="123" font-family="Consolas,monospace" text-anchor="middle" font-size="16" font-weight="bold" fill="#7AC9F5">02</text>
+  <rect x="308" y="155" width="32" height="3" rx="1.5" fill="#7AC9F5"/>
+  <text x="308" y="193" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#EAF4FD">DATA &amp; SPEED</text>
+  <text x="308" y="223" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#AFC2D5">Efficient queries,</text>
+  <text x="308" y="247" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#AFC2D5">caching &amp; async flows</text>
+  <circle cx="644" cy="117" r="25" fill="#15263C" stroke="#94B3FF" stroke-width="1.4"/>
+  <circle cx="644" cy="117" r="19" fill="#94B3FF" fill-opacity=".10"/>
+  <text x="644" y="123" font-family="Consolas,monospace" text-anchor="middle" font-size="16" font-weight="bold" fill="#94B3FF">03</text>
+  <rect x="581" y="155" width="32" height="3" rx="1.5" fill="#94B3FF"/>
+  <text x="581" y="193" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#EAF4FD">RELIABLE SYSTEMS</text>
+  <text x="581" y="223" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#AFC2D5">Testing, tracing</text>
+  <text x="581" y="247" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#AFC2D5">&amp; observability</text>
+  <circle cx="917" cy="117" r="25" fill="#15263C" stroke="#C1AAFF" stroke-width="1.4"/>
+  <circle cx="917" cy="117" r="19" fill="#C1AAFF" fill-opacity=".10"/>
+  <text x="917" y="123" font-family="Consolas,monospace" text-anchor="middle" font-size="16" font-weight="bold" fill="#C1AAFF">04</text>
+  <rect x="853" y="155" width="32" height="3" rx="1.5" fill="#C1AAFF"/>
+  <text x="853" y="193" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#EAF4FD">FULL-STACK THINKING</text>
+  <text x="853" y="223" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#AFC2D5">Backend foundations,</text>
+  <text x="853" y="247" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#AFC2D5">thoughtful interfaces</text>
+  <path d="M0 287H1100" stroke="#5CBAC6" stroke-opacity=".13" />
+</g>
+<rect x="1" y="1" width="1098" height="290" rx="20" fill="none" stroke="#345271" stroke-opacity=".9"/>
+</svg>
