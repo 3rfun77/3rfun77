@@ -25,7 +25,7 @@ I'm a **Senior Software Engineer** who enjoys creating **reliable, maintainable 
 ### Core stack
 
 <p align="center">
-  <img src="./assets/stack.svg" width="100%" alt="My tech stack: Python, Django, FastAPI, Celery, PostgreSQL, Redis, RabbitMQ, Docker, React, TypeScript, OpenTelemetry, and Pytest." />
+  <img src="./assets/stack.svg" width="100%" alt="My core stack grouped into Languages and Backend, Data and Messaging, and Tools Frontend and Observability." />
 </p>
 
 ### A tiny coding break 🎮
