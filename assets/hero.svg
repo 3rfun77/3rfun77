@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Erfan Kamali — Senior Software Engineer</title>
+  <desc id="desc">Minimal dark banner with softly animated lights, professional introduction, and a developer terminal motif.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0A1020"/>
+      <stop offset="0.55" stop-color="#0C1425"/>
+      <stop offset="1" stop-color="#10152D"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0">
+      <stop offset="0" stop-color="#5DE4D4"/>
+      <stop offset="0.5" stop-color="#70B6F5"/>
+      <stop offset="1" stop-color="#B3A1FF"/>
+    </linearGradient>
+    <linearGradient id="underLine" x1="0" x2="1" y1="0">
+      <stop offset="0" stop-color="#5DE4D4" stop-opacity="0"/>
+      <stop offset="0.2" stop-color="#5DE4D4" stop-opacity="0.8"/>
+      <stop offset="0.72" stop-color="#AD9DFA" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#AD9DFA" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#5F9DFA" stop-opacity=".32"/>
+      <stop offset=".55" stop-color="#7159D0" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#7159D0" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#C5D4F0" stroke-opacity=".05" stroke-width=".7"/>
+    </pattern>
+    <clipPath id="rounded"><rect width="1200" height="360" rx="20"/></clipPath>
+  </defs>
+  <style>
+    .float { animation: float 8s ease-in-out infinite alternate; transform-origin: 950px 160px; }
+    .breath { animation: breathe 7s ease-in-out infinite alternate; }
+    .blink { animation: blink 1.2s steps(1,end) infinite; }
+    .pulse { animation: pulse 2.6s ease-in-out infinite; }
+    .trace { animation: trace 6.2s ease-in-out infinite alternate; }
+    @keyframes float { from { transform: translate(0px, 4px) scale(.97); } to { transform: translate(-10px,-8px) scale(1.04); } }
+    @keyframes breathe { 0%,100% {opacity:.7;} 50% {opacity:1;} }
+    @keyframes blink { 0%,49% {opacity:1;} 50%,100% {opacity:0;} }
+    @keyframes pulse { 0% {opacity:.6;} 50% {opacity:1;} 100% {opacity:.6;} }
+    @keyframes trace { from {transform:translateX(-65px);opacity:.3;} to {transform:translateX(60px);opacity:.85;} }
+    @media (prefers-reduced-motion: reduce) {
+      .float,.breath,.blink,.pulse,.trace { animation:none; }
+    }
+  </style>
+  <g clip-path="url(#rounded)">
+    <rect width="1200" height="360" fill="url(#background)"/>
+    <rect width="1200" height="360" fill="url(#grid)"/>
+    <g class="float">
+      <circle cx="980" cy="170" r="280" fill="url(#halo)"/>
+      <circle cx="987" cy="178" r="166" fill="none" stroke="#8E9DF5" stroke-opacity=".1"/>
+      <circle cx="987" cy="178" r="211" fill="none" stroke="#5DE4D4" stroke-opacity=".07"/>
+      <circle cx="987" cy="178" r="253" fill="none" stroke="#8E9DF5" stroke-opacity=".055"/>
+    </g>
+    <path d="M36 36h25M36 36v25M1164 36h-25M1164 36v25M36 324h25M36 324v-25M1164 324h-25M1164 324v-25" stroke="#7C94B5" stroke-opacity=".23" stroke-width="1.2" fill="none"/>
+    <circle cx="79" cy="69" r="4" fill="#62E9D5" class="pulse"/>
+    <text x="94" y="73" fill="#A7B8D0" font-family="'Segoe UI',Arial,sans-serif" font-size="12" letter-spacing="2.8" font-weight="700">HELLO, I'M</text>
+    <text x="75" y="169" fill="#F3F7FF" font-family="'Segoe UI',Arial,sans-serif" font-size="72" font-weight="750" letter-spacing="-2.5">Erfan Kamali</text>
+    <rect x="78" y="193" width="52" height="3" rx="1.5" fill="url(#accent)"/>
+    <text x="78" y="239" fill="#E1E8F5" font-family="'Segoe UI',Arial,sans-serif" font-size="26" font-weight="500">Senior Software Engineer</text>
+    <text x="79" y="278" fill="#91A3BE" font-family="'Segoe UI',Arial,sans-serif" font-size="17" letter-spacing=".15">Backend architecture  ·  Distributed systems  ·  Observability</text>
+    <g class="breath">
+      <rect x="804" y="73" width="330" height="214" rx="16" fill="#0E192B" stroke="#6880A0" stroke-opacity=".35" stroke-width="1.4"/>
+      <path d="M805 113H1133" stroke="#6880A0" stroke-opacity=".26"/>
+      <circle cx="829" cy="94" r="4.2" fill="#F28B92" opacity=".85"/>
+      <circle cx="845" cy="94" r="4.2" fill="#EFB969" opacity=".85"/>
+      <circle cx="861" cy="94" r="4.2" fill="#70D6B1" opacity=".85"/>
+      <text x="1110" y="99" fill="#8194AD" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="11" text-anchor="end">profile.ts</text>
+      <text x="827" y="150" fill="#5FE0D2" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="15">const</text>
+      <text x="885" y="150" fill="#DDE8F7" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="15">focus = [</text>
+      <text x="846" y="184" fill="#C8DBF4" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="14">"reliable systems",</text>
+      <text x="846" y="213" fill="#C8DBF4" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="14">"thoughtful architecture",</text>
+      <text x="846" y="242" fill="#C8DBF4" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="14">"shipping at scale"</text>
+      <text x="828" y="269" fill="#5FE0D2" font-family="Consolas,'DejaVu Sans Mono',monospace" font-size="14">]</text>
+      <rect x="850" y="258" width="8" height="14" rx="1" fill="#6CE8DB" class="blink"/>
+    </g>
+    <line x1="80" y1="320" x2="1120" y2="320" stroke="url(#underLine)" stroke-width="1.3"/>
+    <g class="trace"><line x1="150" y1="320" x2="250" y2="320" stroke="#83F2E5" stroke-opacity=".5" stroke-width="2.2"/></g>
+  </g>
+</svg>
