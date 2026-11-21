@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="180" viewBox="0 0 1100 180" role="img" aria-label="Backend and APIs: Python, Django, FastAPI. Data and systems: PostgreSQL, Redis, RabbitMQ. Quality and delivery: Docker, OpenTelemetry, Testing.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0C192A"/><stop offset="1" stop-color="#152842"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#55E3D1"/><stop offset=".55" stop-color="#82BBFD"/><stop offset="1" stop-color="#B7A2F9"/></linearGradient>
+  </defs>
+  <rect x="1" y="1" width="1098" height="178" rx="18" fill="url(#bg)" stroke="#365270"/>
+  <rect x="20" y="1" width="1060" height="3" rx="1" fill="url(#accent)" opacity=".9"/>
+  <path d="M367 27 V151 M733 27 V151" stroke="#45617B" stroke-opacity=".6"/>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <rect x="36" y="40" width="34" height="34" rx="10" fill="#153D42" stroke="#4D958D"/>
+    <text x="44" y="62" font-size="17" font-family="monospace" font-weight="700" fill="#67E9D4">&lt;/&gt;</text>
+    <text x="85" y="62" fill="#E8F4FF" font-size="21" font-weight="700">Backend &amp; APIs</text>
+    <text x="37" y="104" fill="#73DBCE" font-size="16">Python  ·  Django  ·  FastAPI</text>
+    <text x="37" y="139" fill="#A8BDD2" font-size="14">Clear interfaces &amp; clean design</text>
+
+    <rect x="402" y="40" width="34" height="34" rx="10" fill="#192E4B" stroke="#537EB0"/>
+    <text x="412" y="63" font-size="19" font-family="monospace" font-weight="700" fill="#89C7FB">{ }</text>
+    <text x="452" y="62" fill="#E8F4FF" font-size="21" font-weight="700">Data &amp; systems</text>
+    <text x="403" y="104" fill="#8FC5FF" font-size="16">PostgreSQL  ·  Redis  ·  RabbitMQ</text>
+    <text x="403" y="139" fill="#A8BDD2" font-size="14">Performance &amp; reliability</text>
+
+    <rect x="767" y="40" width="34" height="34" rx="10" fill="#322A4B" stroke="#8B76BA"/>
+    <path d="M776 57 L784 64 L793 48" fill="none" stroke="#D7C4FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="816" y="62" fill="#E8F4FF" font-size="21" font-weight="700">Quality &amp; delivery</text>
+    <text x="768" y="104" fill="#C7B4FF" font-size="16">Docker  ·  OpenTelemetry  ·  Tests</text>
+    <text x="768" y="139" fill="#A8BDD2" font-size="14">Thoughtful tooling &amp; maintainability</text>
+  </g>
+</svg>

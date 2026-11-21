@@ -1,4 +1,4 @@
-# GitHub profile V3 — publish guide
+# GitHub profile V4 — publish guide
 
 ## 1. Upload the profile
 
@@ -20,6 +20,7 @@ The game can also be tested locally by opening `game/index.html` in a modern bro
 
 - `assets/hero.svg`: soft telemetry indicators and flowing packets, inside the README.
 - `assets/typing.svg`: rotating intro lines, inside the README.
+- `assets/capabilities.svg`: three clean technology and ability cards.
 - `assets/game-card.svg`: animated packet mini-preview and a clickable link, inside the README.
 - `game/index.html`: real interactive game with animated particles, hover effects, score effects, and transitions; it runs on **GitHub Pages**, not inside the README.
 
@@ -32,4 +33,4 @@ GitHub filters custom CSS and JavaScript from rendered Markdown. Animated SVGs a
 - Game colors and sizes are in CSS variables at the top of `game/index.html`.
 - Optional: rename the GitHub Pages repository or move the game only if you also update the link in `README.md`.
 
-No contact phone/address is displayed. The CV was used only to select relevant, non-confidential career achievements; no resume file is included in the public bundle.
+No contact phone/address is displayed. This version is intentionally skills-only. No employer names, internal system names, client projects, or work-specific metrics are included.
